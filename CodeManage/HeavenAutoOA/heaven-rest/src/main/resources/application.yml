@@ -18,4 +18,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:5060/heaven/discover/eureka
+      defaultZone: http://heaven:heaven@localhost:5060/heaven/discover/eureka

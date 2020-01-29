@@ -9,7 +9,6 @@
         <relativePath />
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.heaven.auto</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <name>heaven-rest</name>
     <artifactId>heaven-rest</artifactId>
