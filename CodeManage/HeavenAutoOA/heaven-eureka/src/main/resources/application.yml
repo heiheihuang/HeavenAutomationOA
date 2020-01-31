@@ -16,7 +16,7 @@ eureka:
     #表示是否向eureka注册服务，即在自己的eureka中注册自己，默认为true，此处应该设置为false；
     register-with-eureka: false
     service-url:
-      defaultZone:  http://localhost:5060/heaven/discover/eureka
+      defaultZone:  http://heaven:heaven@localhost:5060/heaven/discover/eureka
   instance:
     hostname: localhost
   server:
@@ -26,3 +26,15 @@ eureka:
     enable-self-preservation: false
     #扫描失效服务的间隔时间（单位是毫秒，摩恩是60*1000)，即60s
     eviction-interval-timer-in-ms: 10000
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
