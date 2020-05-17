@@ -9,6 +9,7 @@
         <module>heaven-eureka</module>
         <module>heaven-rest</module>
         <module>heaven-log</module>
+        <module>heaven-sso</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
