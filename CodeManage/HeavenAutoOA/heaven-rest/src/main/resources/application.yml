@@ -5,16 +5,33 @@ server:
     #定义端口号
   port: 7001
 spring:
-  #  下面是我整合redis使用的配置，你们此处不需要
-  #  redis:
-  #    cluster:
-  #      expire-seconds: 120
-  #      command-timeout: 5000
-  #      nodes:
-  #  namenode22:6379,datanode23:6379,datanode24:6379,datanode25:6379,datanode26:6379,datanode27:6379
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/heaven?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: huang8635766
+    type: com.alibaba.druid.pool.DruidDataSource
+  # Redis数据源
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 6000
+    password: huang8635766
+    jedis:
+      pool:
+        max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 10      # 连接池中的最大空闲连接
+        min-idle: 5       # 连接池中的最小空闲连接
   application:
     #定义应用名称，即服务名称
     name: client-heaven-rest
+
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath:com.heaven.dao.mapper/*.xml
 eureka:
   client:
     service-url:
